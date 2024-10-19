@@ -1,6 +1,4 @@
 package com.example.ticketbooking.controller;
-
-import com.example.ticketbooking.dto.MovieDto;
 import com.example.ticketbooking.dto.TheaterDto;
 import com.example.ticketbooking.service.TheaterService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +18,7 @@ public class TheaterController {
         return theaterService.getAllTheaters();
     }
 
-    @PostMapping("/location")
+    @GetMapping("/location")
     public List<TheaterDto> getTheaterBasedOnLocation(@RequestParam String location){
         return theaterService.getTheaterBasedOnLocation(location);
     }

@@ -35,6 +35,12 @@ public class TheaterServiceImpl implements TheaterService {
      */
     @Override
     public List<TheaterDto> getTheaterBasedOnLocation(String location) {
-        return List.of();
+        List<TheaterDto> theaterDtoList= new ArrayList<>();
+        for (Theater theater : theaterRepository.getBylocation(location)){
+            TheaterDto theaterDto = new TheaterDto();
+            TheaterMapper.mapToTheaterDto(theater , theaterDto);
+            theaterDtoList.add(theaterDto);
+        }
+        return theaterDtoList;
     }
 }

@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 @Getter
 @Setter
@@ -36,5 +37,8 @@ public class Ticket {
 
     @Column(name = "booked_at", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime bookedAt;
+
+    @Column(nullable = false, precision = 8, scale = 2)
+    private BigDecimal totalPrice;
 
 }

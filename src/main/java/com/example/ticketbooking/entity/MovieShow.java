@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 @Getter
 @Setter
@@ -32,5 +33,7 @@ public class MovieShow {
     @Column(nullable = false)
     private Integer availableSeats;
 
+    @Column(nullable = false, precision = 8, scale = 2)
+    private BigDecimal price;
     // Getters and setters
 }
